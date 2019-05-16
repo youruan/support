@@ -20,7 +20,7 @@ function format_price($price, $multiple = 100, $float = 2)
 
 function hidden_part($string, $leftLength = 1, $rightLength = 2)
 {
-    return mb_substr($string, 0, $leftLength) . ' **** ' . mb_substr($string, - $rightLength);
+    return mb_substr($string, 0, $leftLength) . ' **** ' . $rightLength > 0 ? mb_substr($string, - $rightLength) : '';
 }
 
 /**
