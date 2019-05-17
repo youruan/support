@@ -30,7 +30,7 @@ function yuan_to_cent($amountYuan)
 
 function hidden_part($string, $leftLength = 1, $rightLength = 2)
 {
-    return mb_substr($string, 0, $leftLength) . ' **** ' . $rightLength > 0 ? mb_substr($string, - $rightLength) : '';
+    return mb_substr($string, 0, $leftLength) . ' **** ' . ($rightLength > 0 ? mb_substr($string, - $rightLength) : '');
 }
 
 function rand_number($id, $length = 12)
