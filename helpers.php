@@ -15,12 +15,7 @@
  */
 function format_price($price, $multiple = 100, $float = 2)
 {
-    return number_format($price / $multiple, $float);
-}
-
-function hidden_part($string, $leftLength = 1, $rightLength = 2)
-{
-    return mb_substr($string, 0, $leftLength) . ' **** ' . $rightLength > 0 ? mb_substr($string, - $rightLength) : '';
+    return round($price / $multiple, $float);
 }
 
 /**
@@ -30,7 +25,12 @@ function hidden_part($string, $leftLength = 1, $rightLength = 2)
  */
 function yuan_to_cent($amountYuan)
 {
-    return (int) ($amountYuan * 100);
+    return ceil($amountYuan * 100);
+}
+
+function hidden_part($string, $leftLength = 1, $rightLength = 2)
+{
+    return mb_substr($string, 0, $leftLength) . ' **** ' . $rightLength > 0 ? mb_substr($string, - $rightLength) : '';
 }
 
 function rand_number($id, $length = 12)
