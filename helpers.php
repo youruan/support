@@ -15,7 +15,7 @@
  */
 function format_price($price, $multiple = 100, $float = 2)
 {
-    return round($price / $multiple, $float);
+    return number_format($price / $multiple, $float, '.', '');
 }
 
 /**
