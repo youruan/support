@@ -18,6 +18,7 @@ function format_price($price, $multiple = 100, $float = 2)
     return number_format($price / $multiple, $float, '.', '');
 }
 
+
 /**
  * @param $amountYuan
  * @return int
@@ -25,7 +26,7 @@ function format_price($price, $multiple = 100, $float = 2)
  */
 function yuan_to_cent($amountYuan)
 {
-    return ceil($amountYuan * 100);
+    return (int) ($amountYuan * 100);
 }
 
 function hidden_part($string, $leftLength = 1, $rightLength = 2)
