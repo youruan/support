@@ -26,7 +26,7 @@ function format_price($price, $multiple = 100, $float = 2)
  */
 function yuan_to_cent($amountYuan)
 {
-    return (int) ($amountYuan * 100);
+    return round($amountYuan, 2) * 100;
 }
 
 function hidden_part($string, $leftLength = 1, $rightLength = 2)
