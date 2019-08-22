@@ -132,3 +132,23 @@ function keys_to_string(array $array, $glue = ',')
 {
     return implode($glue, array_keys($array));
 }
+
+
+/**
+ * @param $minutes
+ * @return string
+ * 将分钟为单位的时间 转换为人类友好的表达方式
+ */
+function minutes_for_humans($minutes)
+{
+    if($minutes == 30) {
+        return '半小时';
+    }
+
+    $hours = floor($minutes / 60);
+
+    $realMinutes = $minutes % 60;
+
+    return ($hours > 0 ? $hours . '小时' : '') . ($realMinutes > 0 ? $realMinutes . '分钟' : '');
+}
+
