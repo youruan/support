@@ -55,7 +55,7 @@ function to_full_url($path, $disk = null)
         return $path;
     }
 
-    return \Storage::disk($disk ?? config('filesystems.default'))->url($path);
+    return Storage::disk($disk ?? config('filesystems.default'))->url($path);
 }
 
 function to_full_urls($paths)
